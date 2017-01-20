@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Norma – Remote control</title>
+	</head>
+	<body>
+		<h1>Norma – Remote control</h1>
+
+
+		<table class="joypad">
+			<tr>
+				<td><button class="move" value="turn left">turn left</button></td>
+				<td><button class="move" value="forward">forward</button></td>
+				<td><button class="move" value="turn right">turn right</button></td>
+			</tr>
+			<tr>
+				<td><button class="move" value="left">left</button></td>
+				<td><button class="move" value="stop">stop</button></td>
+				<td><button class="move" value="right">right</button></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button class="move" value="backward">backward</button></td>
+				<td></td>
+			</tr>
+		</table>
+
+		<fieldset>
+			<input id="text"/>
+			<button id="say-text">Say it</button>
+		</fieldset>
+
+		<button class="speech" value="^startTag(hello) Hello! ^waitTag(hello)">Hello</button>
+		<button class="speech">Hello world!</button>
+		<button class="speech">My name is Norma</button>
+		<button class="speech" value="R\pau=100\e">Respect</button>
+		<button class="speech">My colleagues are very nice</button>
+		<button class="speech">They eat a lot of cake!</button>
+		<button class="speech">^runTag(but) But they eat a lot of cake.</button>
+		<button class="speech">Hmm ...</button>
+		<button class="speech">I love you</button>
+		<button class="speech">Hello! ^start(animations/Stand/Gestures/Hey_1) Nice to meet you ^wait(animations/Stand/Gestures/Hey_1)</button>
+
+		<div id="time"></div>
+
+		<textarea id="output" rows="20" cols="80"></textarea>
+
+		<script src="/libs/qimessaging/2/qimessaging.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
