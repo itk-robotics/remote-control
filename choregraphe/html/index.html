@@ -1,52 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 	<head>
 		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Norma – Remote control</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 	</head>
 	<body>
-		<h1>Norma – Remote control</h1>
+		<div class="container">
+			<div class="alert alert-warning" id="not-connected">
+				<strong>Warning!</strong> No connection to Norma!
+			</div>
+			<h1>Norma – Remote control</h1>
 
+			<table class="joypad">
+				<tr>
+					<td><button class="btn btn-default move" value="turn left"><span class="glyphicon glyphicon-repeat" style="transform: scale(-1, 1);"></span></button></td>
+					<td><button class="btn btn-default move" value="forward"><span class="glyphicon glyphicon-arrow-up"></span></button></td>
+					<td><button class="btn btn-default move" value="turn right"><span class="glyphicon glyphicon-repeat"></span></button></td>
+				</tr>
+				<tr>
+					<td><button class="btn btn-default move" value="left"><span class="glyphicon glyphicon-arrow-left"></span></button></td>
+					<td><button class="btn btn-default move" value="stop"><span class="glyphicon glyphicon-record"></span></button></td>
+					<td><button class="btn btn-default move" value="right"><span class="glyphicon glyphicon-arrow-right"></span></button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button class="btn btn-default move" value="backward"><span class="glyphicon glyphicon-arrow-down"></span></button></td>
+					<td></td>
+				</tr>
+			</table>
 
-		<table class="joypad">
-			<tr>
-				<td><button class="move" value="turn left">turn left</button></td>
-				<td><button class="move" value="forward">forward</button></td>
-				<td><button class="move" value="turn right">turn right</button></td>
-			</tr>
-			<tr>
-				<td><button class="move" value="left">left</button></td>
-				<td><button class="move" value="stop">stop</button></td>
-				<td><button class="move" value="right">right</button></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><button class="move" value="backward">backward</button></td>
-				<td></td>
-			</tr>
-		</table>
+			<hr/>
 
-		<fieldset>
-			<input id="text"/>
-			<button id="say-text">Say it</button>
-		</fieldset>
+			<button class="btn btn-default posture">Crouch</button>
+			<!-- <button class="btn btn-default posture">LyingBack</button> -->
+			<!-- <button class="btn btn-default posture">LyingBelly</button> -->
+			<!-- <button class="btn btn-default posture">Sit</button> -->
+			<!-- <button class="btn btn-default posture">SitRelax</button> -->
+			<button class="btn btn-default posture">Stand</button>
+			<button class="btn btn-default posture">StandInit</button>
+			<button class="btn btn-default posture">StandZero</button>
 
-		<button class="speech" value="^startTag(hello) Hello! ^waitTag(hello)">Hello</button>
-		<button class="speech">Hello world!</button>
-		<button class="speech">My name is Norma</button>
-		<button class="speech" value="R\pau=100\e">Respect</button>
-		<button class="speech">My colleagues are very nice</button>
-		<button class="speech">They eat a lot of cake!</button>
-		<button class="speech">^runTag(but) But they eat a lot of cake.</button>
-		<button class="speech">Hmm ...</button>
-		<button class="speech">I love you</button>
-		<button class="speech">Hello! ^start(animations/Stand/Gestures/Hey_1) Nice to meet you ^wait(animations/Stand/Gestures/Hey_1)</button>
+			<hr/>
 
-		<div id="time"></div>
+			<div class="form">
+				<div class="input-group">
+					<input class="form-control" id="text"/>
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" id="say-text">Say it</button>
+					</span>
+				</div>
+			</div>
 
-		<textarea id="output" rows="20" cols="80"></textarea>
+			<hr/>
+
+			<button class="btn btn-default speech" value="^startTag(hello) Hello! ^waitTag(hello)">Hello</button>
+			<button class="btn btn-default speech">Hello world!</button>
+			<button class="btn btn-default speech">My name is Norma</button>
+			<button class="btn btn-default speech" value="R\pau=100\e">Respect</button>
+			<button class="btn btn-default speech">My colleagues are very nice</button>
+			<button class="btn btn-default speech">They eat a lot of cake!</button>
+			<button class="btn btn-default speech">^runTag(but) But they eat a lot of cake.</button>
+			<button class="btn btn-default speech">Hmm ...</button>
+			<button class="btn btn-default speech">I love you</button>
+			<button class="btn btn-default speech">Hello! ^start(animations/Stand/Gestures/Hey_1) Nice to meet you ^wait(animations/Stand/Gestures/Hey_1)</button>
+
+			<div id="time"></div>
+
+			<hr/>
+
+			<div class="form">
+				<textarea class="form-control" id="output" rows="20" cols="80"></textarea>
+			</div>
+		</div>
 
 		<script src="/libs/qimessaging/2/qimessaging.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
