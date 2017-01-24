@@ -1,6 +1,6 @@
 ;(function() {
-		var log = function(message) {
-				document.getElementById('output').value += message + '\n';
+		var log = function() {
+				document.getElementById('output').value += JSON.stringify([].slice.call(arguments)) + '\n';
 		}
 
 		// keeping a pointer to the session is very useful!
@@ -37,7 +37,7 @@
 								})
 						};
 
-						[].slice.call(document.querySelectorAll('button.speech')).forEach(function(button, index) {
+						[].slice.call(document.querySelectorAll('button.speech, div.speech')).forEach(function(button, index) {
 								button.addEventListener('click', sayMe);
 						});
 
@@ -94,7 +94,8 @@
 								var value = this.value ? this.value : this.innerHTML;
 								session.service('ALRobotPosture').then(function (posture) {
 										try {
-												posture.applyPosture(value, 1.0);
+												posture.applyPosture(value, 0.5);
+												log(value, 0.5);
 										} catch (ex) {
 												;;; console.log(ex);
 										}

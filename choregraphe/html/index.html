@@ -32,40 +32,44 @@
 				</tr>
 			</table>
 
-			<hr/>
+			<fieldset>
+				<legend>Postures</legend>
 
-			<button class="btn btn-default posture">Crouch</button>
-			<!-- <button class="btn btn-default posture">LyingBack</button> -->
-			<!-- <button class="btn btn-default posture">LyingBelly</button> -->
-			<!-- <button class="btn btn-default posture">Sit</button> -->
-			<!-- <button class="btn btn-default posture">SitRelax</button> -->
-			<button class="btn btn-default posture">Stand</button>
-			<button class="btn btn-default posture">StandInit</button>
-			<button class="btn btn-default posture">StandZero</button>
+				<button class="btn btn-default posture">Crouch</button>
+				<button class="btn btn-default posture">Stand</button>
+				<button class="btn btn-default posture">StandInit</button>
+				<button class="btn btn-default posture">StandZero</button>
+			</fieldset>
 
-			<hr/>
+			<fieldset>
+				<legend>Canned responses</legend>
 
-			<div class="form">
-				<div class="input-group">
-					<input class="form-control" id="text"/>
-					<span class="input-group-btn">
-						<button type="button" class="btn btn-default" id="say-text">Say it</button>
-					</span>
+				<button class="btn btn-default speech" value="^startTag(yes) Yes ^waitTag(yes)">Yes</button>
+				<button class="btn btn-default speech" value="^startTag(no) No ^waitTag(no)">No</button>
+				<button class="btn btn-default speech">Good bye</button>
+				<button class="btn btn-default speech" value="^startTag(hello) Hello ^waitTag(hello)">Hello</button>
+				<button class="btn btn-default speech" value="^startTag(hello) Hello everybody ^waitTag(hello)">Hello everybody</button>
+				<button class="btn btn-default speech">My name is Norma</button>
+
+				<hr/>
+
+				<button class="btn btn-default speech">My job is to meet and greet the citizens of Aarhus, and to experiment in ways to help my colleagues.</button>
+
+				<button class="btn btn-default speech">I have been treated very well. Some people do not know what to think of me at first. Some talk very fast and some even in Danish.</button>
+				<button class="btn btn-default speech">My favorite moments are when I make people smile, and I like it when people find the courage to talk to me.</button>
+
+			</fieldset>
+
+
+				<div class="form">
+					<div class="input-group">
+						<input class="form-control" id="text"/>
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" id="say-text">Say it</button>
+						</span>
+					</div>
 				</div>
-			</div>
 
-			<hr/>
-
-			<button class="btn btn-default speech" value="^startTag(hello) Hello! ^waitTag(hello)">Hello</button>
-			<button class="btn btn-default speech">Hello world!</button>
-			<button class="btn btn-default speech">My name is Norma</button>
-			<button class="btn btn-default speech" value="R\pau=100\e">Respect</button>
-			<button class="btn btn-default speech">My colleagues are very nice</button>
-			<button class="btn btn-default speech">They eat a lot of cake!</button>
-			<button class="btn btn-default speech">^runTag(but) But they eat a lot of cake.</button>
-			<button class="btn btn-default speech">Hmm ...</button>
-			<button class="btn btn-default speech">I love you</button>
-			<button class="btn btn-default speech">Hello! ^start(animations/Stand/Gestures/Hey_1) Nice to meet you ^wait(animations/Stand/Gestures/Hey_1)</button>
 
 			<div id="time"></div>
 
